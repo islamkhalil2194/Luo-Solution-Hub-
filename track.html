@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Your Application — LUO SOLUTION HUB</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <img src="image/logo.jpeg" alt="LUO Solution Hub Logo">
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" id="siteNav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="track.html" class="active">Track</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="booking.html" class="nav-cta">Book Appointment</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+
+        <div class="hero-badge">
+          <span></span>
+          Track Your Application
+        </div>
+
+        <div class="hero-text">
+          <h1>Check on your application's progress.</h1>
+          <p class="hero-sub">
+            Enter your reference number below and we'll get back to you on
+            WhatsApp with the latest update — usually within a few hours.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRACK FORM -->
+    <section class="form-section">
+      <div class="container form-section-inner">
+
+        <form id="trackForm" class="site-form">
+          <div class="form-group">
+            <label for="trackName">Full name</label>
+            <input type="text" id="trackName" name="name" required placeholder="e.g. Amina Juma">
+          </div>
+
+          <div class="form-group">
+            <label for="trackPhone">Phone number</label>
+            <input type="tel" id="trackPhone" name="phone" required placeholder="e.g. 0712 345 678">
+          </div>
+
+          <div class="form-group form-group-full">
+            <label for="trackReference">Reference number or service</label>
+            <input type="text" id="trackReference" name="reference" required placeholder="e.g. LSH-0142, or just the service name if you don't have one">
+          </div>
+
+          <button type="submit" class="btn btn-primary form-submit">Check via WhatsApp</button>
+        </form>
+
+        <aside class="form-aside">
+          <h3>No reference number?</h3>
+          <p>
+            That's fine — just tell us your name, phone number, and which
+            service you booked, and we'll look it up for you.
+          </p>
+          <ul class="contact-list">
+            <li>
+              <strong>WhatsApp / Call</strong>
+              <a href="tel:+255757370700">+255 757 370 700</a>
+            </li>
+          </ul>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <a href="index.html" class="logo footer-logo">
+          <img src="image/logo.jpeg" alt="LUO Solution Hub Logo">
+        </a>
+        <p>Government &amp; business services, handled.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <p class="footer-bottom">&copy; 2026 LUO SOLUTION HUB. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
