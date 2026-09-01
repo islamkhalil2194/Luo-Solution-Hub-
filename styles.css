@@ -1,0 +1,440 @@
+/* ============ 1. Design tokens ============
+   Keeping colors, fonts, and spacing as CSS variables means
+   every page can reuse the exact same values — change them
+   once here and the whole site updates. */
+:root {
+  --color-teal: #0B4F4A;
+  --color-teal-dark: #073735;
+  --color-ochre: #D98E04;
+  --color-ochre-dark: #B87400;
+  --color-bg: #FAF7F0;
+  --color-bg-alt: #F0EBDD;
+  --color-text: #1F2421;
+  --color-text-muted: #52605C;
+  --color-border: #DCD5C4;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Work Sans", sans-serif;
+
+  --max-width: 1120px;
+}
+
+/* ============ 2. Reset & base ============ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+}
+
+p {
+  margin: 0 0 1em;
+  color: var(--color-text-muted);
+  max-width: 62ch; /* keeps body text lines readable, under ~80 chars */
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============ 3. Buttons ============ */
+.btn {
+  display: inline-block;
+  padding: 0.85em 1.6em;
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--color-ochre);
+  color: var(--color-teal-dark);
+}
+.btn-primary:hover {
+  background: var(--color-ochre-dark);
+}
+
+.btn-ghost {
+  border: 1.5px solid var(--color-teal);
+  color: var(--color-teal);
+}
+.btn-ghost:hover {
+  background: var(--color-teal);
+  color: white;
+}
+
+/* ============ 4. Header & nav ============ */
+.site-header {
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--color-teal);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+.logo span {
+  color: var(--color-ochre-dark);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.site-nav a.active {
+  color: var(--color-teal);
+  border-bottom: 2px solid var(--color-ochre);
+  padding-bottom: 4px;
+}
+
+.nav-cta {
+  background: var(--color-teal);
+  color: white !important;
+  padding: 0.5em 1.1em;
+  border-radius: 4px;
+}
+.nav-cta:hover {
+  background: var(--color-teal-dark);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+.nav-toggle span {
+  width: 24px;
+  height: 2px;
+  background: var(--color-teal);
+}
+
+/* ============ 5. Hero ============ */
+.hero {
+  padding: 72px 0 56px;
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.hero-text h1 {
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  max-width: 16ch;
+  color: var(--color-teal-dark);
+}
+
+.hero-sub {
+  max-width: 48ch;
+  font-size: 1.05rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.service-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  background: white;
+  border: 1px solid var(--color-border);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: var(--color-teal-dark);
+  font-weight: 500;
+}
+.chip:hover {
+  border-color: var(--color-ochre);
+  background: var(--color-bg-alt);
+}
+
+/* ============ 6. How it works ============ */
+.how-it-works {
+  background: var(--color-teal-dark);
+  color: white;
+  padding: 64px 0;
+}
+.how-it-works h2 {
+  color: white;
+}
+
+.steps {
+  list-style: none;
+  margin: 32px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.steps li {
+  border-top: 2px solid rgba(255,255,255,0.25);
+  padding-top: 16px;
+}
+
+.step-num {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--color-ochre);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.steps h3 {
+  color: white;
+  font-size: 1.1rem;
+}
+
+.steps p {
+  color: rgba(255,255,255,0.8);
+}
+
+/* ============ 7. Services grid ============ */
+.services {
+  padding: 64px 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.service-card {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 24px;
+}
+
+.service-card h3 {
+  font-size: 1.05rem;
+  color: var(--color-teal-dark);
+}
+
+.service-card p {
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+/* ============ 8. Trust section ============ */
+.trust {
+  background: var(--color-bg-alt);
+  padding: 64px 0;
+}
+
+.trust-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.trust-inner > div:first-child {
+  flex: 1 1 380px;
+}
+
+.trust-stats {
+  display: flex;
+  gap: 40px;
+  margin: 0;
+}
+
+.trust-stats dt {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+}
+
+.trust-stats dd {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-teal);
+  margin: 0;
+  max-width: 16ch;
+}
+
+/* ============ 9. CTA band ============ */
+.cta-band {
+  background: var(--color-ochre);
+  padding: 48px 0;
+}
+
+.cta-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cta-inner h2 {
+  color: var(--color-teal-dark);
+  margin: 0;
+  max-width: 24ch;
+}
+
+.cta-band .btn-primary {
+  background: var(--color-teal-dark);
+  color: white;
+}
+.cta-band .btn-primary:hover {
+  background: var(--color-teal);
+}
+
+/* ============ 10. Footer ============ */
+.site-footer {
+  background: var(--color-teal-dark);
+  color: rgba(255,255,255,0.85);
+  padding: 48px 0 24px;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.footer-logo {
+  color: white;
+  margin-bottom: 8px;
+}
+.footer-logo span {
+  color: var(--color-ochre);
+}
+
+.footer-inner p {
+  color: rgba(255,255,255,0.7);
+  margin: 0;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.footer-nav a {
+  text-decoration: none;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.9rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  margin: 20px 0 0;
+}
+
+/* ============ 11. Responsive ============ */
+@media (min-width: 800px) {
+  .hero-inner {
+    flex-direction: row;
+    align-items: center;
+  }
+  .hero-text {
+    flex: 1 1 55%;
+  }
+  .service-chips {
+    flex: 1 1 40%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 860px) {
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .nav-toggle {
+    display: flex;
+  }
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 24px 24px;
+    gap: 16px;
+    display: none;
+  }
+  .site-nav.open {
+    display: flex;
+  }
+  .nav-cta {
+    align-self: flex-start;
+  }
+}
+
+/* Respect users who've asked for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
