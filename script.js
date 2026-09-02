@@ -234,4 +234,81 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
+  /* =====================================================
+     BLOG LISTING (blog.html)
+     Builds the card grid from data/posts.js so adding a
+     new post only means editing that one file.
+     ===================================================== */
+
+  const blogGrid = document.getElementById("blogGrid");
+
+  if (blogGrid && typeof blogPosts !== "undefined") {
+
+    const sortedPosts = [...blogPosts].sort(
+      (a, b) => new Date(b.date) - new Date(a.date)
+    );
+
+    sortedPosts.forEach(post => {
+
+      const card = document.createElement("a");
+
+      card.href = `blog-post.html?slug=${encodeURIComponent(post.slug)}`;
+      card.className = "service-card blog-card";
+
+      card.innerHTML = `
+        <span class="blog-tag">${post.tag}</span>
+        <h3>${post.title}</h3>
+        <p>${post.excerpt}</p>
+      `;
+
+      blogGrid.appendChild(card);
+
+    });
+  }
+
+
+  /* =====================================================
+     BLOG ARTICLE (blog-post.html)
+     Reads ?slug= from the URL and fills in the matching
+     post from data/posts.js.
+     ===================================================== */
+
+  const postTitleEl = document.getElementById("postTitle");
+  const postBodyEl = document.getElementById("postBody");
+
+  if (postTitleEl && postBodyEl && typeof blogPosts !== "undefined") {
+
+    const params = new URLSearchParams(window.location.search);
+    const slug = params.get("slug");
+
+    const post = blogPosts.find(p => p.slug === slug);
+
+    const postTagEl = document.getElementById("postTag");
+
+    if (post) {
+
+      document.title = `${post.title} — LUO SOLUTION HUB`;
+
+      postTitleEl.textContent = post.title;
+      postBodyEl.innerHTML = post.body;
+
+      if (postTagEl) {
+        postTagEl.textContent = post.tag;
+      }
+
+    } else {
+
+      postTitleEl.textContent = "Post not found";
+
+      postBodyEl.innerHTML =
+        '<p>Sorry, we couldn\'t find that post. <a href="blog.html">Back to Blog</a></p>';
+
+      if (postTagEl) {
+        postTagEl.textContent = "";
+      }
+
+    }
+  }
+
 });

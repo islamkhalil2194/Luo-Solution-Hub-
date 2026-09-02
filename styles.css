@@ -1901,3 +1901,363 @@ section h2::after {
 
   font-size: 14px;
 }
+
+
+/* =========================================================
+   BLOG ARTICLE PAGE
+   ========================================================= */
+
+.article-hero {
+  padding-bottom: 60px;
+}
+
+.article-section {
+  padding: 20px 0 90px;
+
+  background: var(--white);
+}
+
+.article-inner {
+  display: grid;
+
+  grid-template-columns: 2.2fr 1fr;
+
+  gap: 50px;
+
+  align-items: start;
+}
+
+.article-body {
+  max-width: 68ch;
+}
+
+.article-body p {
+  color: var(--muted);
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  margin-bottom: 20px;
+}
+
+.article-body h2 {
+  font-size: 24px;
+
+  margin-top: 40px;
+}
+
+.article-body ul,
+.article-body ol {
+  color: var(--text);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  margin: 0 0 20px;
+
+  padding-left: 22px;
+}
+
+.article-body li {
+  margin-bottom: 8px;
+}
+
+.article-cta-box {
+  margin-top: 40px;
+
+  padding: 30px;
+
+  background: var(--light);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius);
+}
+
+.article-cta-box h3 {
+  font-family: "Fraunces", serif;
+
+  font-size: 19px;
+
+  color: var(--navy);
+
+  margin-bottom: 10px;
+}
+
+.article-cta-box p {
+  margin-bottom: 18px;
+}
+
+.article-sidebar .form-aside {
+  position: sticky;
+
+  top: 100px;
+}
+
+@media (max-width: 860px) {
+  .article-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .article-sidebar .form-aside {
+    position: static;
+  }
+}
+
+
+/* =========================================================
+   ABOUT PAGE — WHO WE SERVE / PLATFORMS (static chip lists)
+   ========================================================= */
+
+.chip-static {
+  padding: 9px 15px;
+
+  color: var(--navy);
+
+  background: var(--white);
+
+  border: 1px solid var(--border);
+
+  border-radius: 50px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  box-shadow: var(--shadow-sm);
+}
+
+.chip-row {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-top: 30px;
+}
+
+
+/* =========================================================
+   ABOUT PAGE — CONFERENCE BAND
+   ========================================================= */
+
+.conference-band {
+  padding: 90px 0;
+
+  color: var(--white);
+
+  background: var(--navy);
+
+  overflow: hidden;
+}
+
+.conference-band::before {
+  content: "";
+
+  position: absolute;
+
+  width: 480px;
+  height: 480px;
+
+  left: -220px;
+  bottom: -240px;
+
+  border-radius: 50%;
+
+  border: 70px solid rgba(255, 255, 255, 0.05);
+}
+
+.conference-inner {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 800px;
+}
+
+.conference-inner h2 {
+  color: var(--white);
+}
+
+.conference-inner h2::after {
+  background: var(--red);
+}
+
+.conference-badge {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  padding: 6px 14px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  border-radius: 50px;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.04em;
+
+  text-transform: uppercase;
+}
+
+.conference-inner p {
+  color: rgba(255, 255, 255, 0.8);
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  margin-top: 16px;
+
+  max-width: 700px;
+}
+
+
+/* =========================================================
+   ABOUT PAGE — LEADERSHIP
+   ========================================================= */
+
+.leadership {
+  padding: 95px 0;
+
+  background: var(--white);
+}
+
+.leadership-inner {
+  display: grid;
+
+  grid-template-columns: 260px 1fr;
+
+  gap: 50px;
+
+  align-items: start;
+}
+
+.leadership-profile {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 16px;
+}
+
+.avatar-circle {
+  width: 120px;
+  height: 120px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  background: linear-gradient(135deg, var(--navy), var(--blue));
+
+  color: var(--white);
+
+  font-family: "Fraunces", serif;
+
+  font-size: 34px;
+  font-weight: 700;
+
+  box-shadow: var(--shadow-md);
+}
+
+.avatar-circle img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.leadership-profile h3 {
+  font-family: "Fraunces", serif;
+
+  font-size: 22px;
+
+  color: var(--navy);
+
+  margin: 0;
+}
+
+.leadership-profile span {
+  color: var(--red);
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.leadership-body p {
+  color: var(--muted);
+
+  font-size: 15px;
+
+  line-height: 1.8;
+
+  margin-bottom: 18px;
+}
+
+.leadership-body h4 {
+  font-family: "Fraunces", serif;
+
+  font-size: 17px;
+
+  color: var(--navy);
+
+  margin: 24px 0 14px;
+}
+
+.leadership-body ul {
+  list-style: none;
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 10px 20px;
+}
+
+.leadership-body ul li {
+  position: relative;
+
+  padding-left: 20px;
+
+  color: var(--text);
+
+  font-size: 14px;
+}
+
+.leadership-body ul li::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 8px;
+
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--red);
+}
+
+@media (max-width: 800px) {
+  .leadership-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .leadership-body ul {
+    grid-template-columns: 1fr;
+  }
+}
