@@ -1058,8 +1058,19 @@ section h2::after {
   padding-bottom: 45px;
 }
 
+.footer-logo {
+  display: inline-block;
+
+  padding: 10px 16px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border-radius: 10px;
+}
+
 .footer-logo img {
   width: 145px;
+  display: block;
 }
 
 .footer-inner p {
